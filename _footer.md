@@ -1,6 +1,6 @@
 
 <br><br><br><br>
-<span> Copyright &copy; All Rights Reserved 2021 沪ICP备18008337号-5 </span>  [青城科技](https://www.wanghuan.icu)
+<span> Copyright &copy; All Rights Reserved 2022  </span>  [青城科技](https://www.wanghuan.icu)  [沪ICP备18008337号-5](http://beian.miit.gov.cn)
 <br>
 <div style="font-size: 4px;">
 :sparkles: 谎言不会伤人 真相才是快刀:zzz:
