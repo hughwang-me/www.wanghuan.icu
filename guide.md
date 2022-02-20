@@ -9,18 +9,7 @@
 
 ## 开始使用
 
-- **LEVO BASE_URL**<br>
-  ```
-  https://api.esscoeng.com
-  ```
-
-  ?> 注意: `https`
-
-- **DC2 BASE_URL**<br>
-  ```
-  https://dc2api.esscoeng.com
-  ```
-  ?> 注意: `https`
+ 
 
 ## 联系开发者 & 获取帮助
 
@@ -28,7 +17,7 @@
 
 ## 版权
 
-Copyright (c) 坦力机电
+Copyright (c) 青城科技 [沪ICP备18008337号-5](http://beian.miit.gov.cn)
 
 <!-- GitHub Buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
