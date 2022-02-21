@@ -21,3 +21,13 @@
     - **PostgreSQL**
         - [PostgreSQL基础](_3_database/_3_3_postgresql/_3_3_1_PostgreSQL基础.md "PostgreSQL基础")
         - [安装和基本使用](_3_database/_3_3_postgresql/_3_3_2_安装和基本使用.md "安装和基本使用")
+
+
+- **数据结构和算法**
+
+    - **基础**
+        - [数据结构基础](_6_数据结构和算法/_1_基础/数据结构基础.md "数据结构基础") 
+        - [算法基础](_6_数据结构和算法/_1_基础/算法基础.md "算法基础")
+    - **数组**
+        - [PostgreSQL基础](_3_database/_3_3_postgresql/_3_3_1_PostgreSQL基础.md "PostgreSQL基础")
+        - [安装和基本使用](_3_database/_3_3_postgresql/_3_3_2_安装和基本使用.md "安装和基本使用")
