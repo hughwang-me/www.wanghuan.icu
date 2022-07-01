@@ -13,7 +13,7 @@
 
 ## 联系开发者 & 获取帮助
 
-- 联系人 : [王欢](http://www.wanghuan.icu) 
+- 联系人 : [王欢](http://www.wanghuan.icu)  18501667737
 
 ## 版权
 

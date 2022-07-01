@@ -31,3 +31,12 @@
     - **数组**
         - [PostgreSQL基础](_3_database/_3_3_postgresql/_3_3_1_PostgreSQL基础.md "PostgreSQL基础")
         - [安装和基本使用](_3_database/_3_3_postgresql/_3_3_2_安装和基本使用.md "安装和基本使用")
+
+- **音视频开发技术**
+
+    - **基础**
+        - [音视频录制和播放](_7_音视频开发技术/_7_1_音视频基础/_7_1_1_音视频录制和播放.md "音视频录制和播放")
+        - [图像基础](_7_音视频开发技术/_7_1_音视频基础/_7_1_2_图像基础.md "图像基础")
+    - **数组**
+        - [PostgreSQL基础](_3_database/_3_3_postgresql/_3_3_1_PostgreSQL基础.md "PostgreSQL基础")
+        - [安装和基本使用](_3_database/_3_3_postgresql/_3_3_2_安装和基本使用.md "安装和基本使用")
