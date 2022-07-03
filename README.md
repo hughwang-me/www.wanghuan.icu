@@ -9,16 +9,16 @@
 
 ## 开始使用
 
-- **LEVO BASE_URL**<br>
+- ** BASE_URL**<br>
   ```
-  https://api.esscoeng.com
+  https:// 
   ```
 
   ?> 注意: `https`
 
-- **DC2 BASE_URL**<br>
+- ** BASE_URL**<br>
   ```
-  https://dc2api.esscoeng.com
+  https:// 
   ```
   ?> 注意: `https`
 
