@@ -28,7 +28,7 @@
 
 ## 版权
 
-Copyright (c) 坦力机电
+Copyright (c) 
 
 <!-- GitHub Buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

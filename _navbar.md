@@ -8,8 +8,6 @@
     * [联系我们](guide.md)
 
 * 快速导航
-    * [坦力官网](guide.md)
     * [ 官网](guide.md)
     * [ APP 官网](guide.md)
-    * [ 官网](guide.md)
     * [开发者官网](guide.md)

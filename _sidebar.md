@@ -5,6 +5,11 @@
     - [封面](/)
     - [开始使用](guide.md)
 
+- **工具使用**
+
+    - **Multipass**
+        - [基本操作](_8_Multipass/_8_1_Multipass_基本操作.md "基本操作")
+    
 - **WEB学习**
 
     - **WEB基础**
