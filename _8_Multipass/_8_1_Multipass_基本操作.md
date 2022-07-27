@@ -129,3 +129,13 @@ multipass launch docker --name docker0
 ```
 https://multipass.run/docs
 ```
+
+
+### MAC本机测试信息
+
+| 机器                 | image    | IP | 说明           |
+| :-------------------- | :------ | :--- | :--------- | 
+|docker01 |docker|192.168.64.12| |
+|docker02 |docker|192.168.64.13| |
+|docker01 |docker|192.168.64.12| |
+ 
