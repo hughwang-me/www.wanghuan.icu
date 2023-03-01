@@ -1,0 +1,161 @@
+# ZFBrowser 基本使用
+
+### ZFBrowser
+
+```
+官网: https://zenfulcrum.com/browser/docs/Readme.html
+```
+
+### 3D WebView 加载网页
+
+```
+using UnityEngine;
+using Vuplex.WebView;
+
+public class test : MonoBehaviour
+{
+    public CanvasWebViewPrefab canvasWebView;
+
+    async void Start()
+    {
+        await canvasWebView.WaitUntilInitialized();
+
+        canvasWebView.WebView.LoadUrl("https://developer.vuplex.com");
+    }
+}
+
+```
+
+### 3D WebView 执行页面JS
+
+```
+void?ExecuteJavaScript(string?javaScript,?Action<string>?callback)
+Task<string>?ExecuteJavaScript(string?javaScript)
+```
+
+为了运行 JavaScript，必须首先加载网页。可以使用WaitForNextPageLoadToFinish()或LoadProgressChanged事件在页面加载后运行 JavaScript。
+
+``` 
+await webViewPrefab.WaitUntilInitialized();
+ await webViewPrefab.WebView.WaitForNextPageLoadToFinish(); 
+var headerText = await webViewPrefab.WebView.ExecuteJavaScript("document.getElementsByTagName('h1')[0].innerText"); 
+Debug.Log("H1 text: " + headerText);
+
+```
+
+### Unity与网页消息通信
+
+可以实现 Unity与网页的双向通信
+
+#### Unity向网页发消息
+
+从 Unity向 网页 发送消息是使用PostMessage()函数来实现。
+发送消息的 C# 脚本：
+
+``` 
+async void Start() {
+    var webViewPrefab = GameObject.Find("WebViewPrefab").GetComponent<WebViewPrefab>();
+    // Wait for the WebViewPrefab to initialize, because the WebViewPrefab.WebView property
+    // is null until the prefab has initialized.
+    await webViewPrefab.WaitUntilInitialized();
+    // Send a message after the page has loaded.
+    await webViewPrefab.WebView.WaitForNextPageLoadToFinish();
+    webViewPrefab.WebView.PostMessage("{\"type\": \"greeting\", \"message\": \"Hello from C#!\"}");
+}
+
+```
+
+在网页端，通过对象?message事件监听消息的 JavaScript ：
+
+``` 
+if (window.vuplex) {
+    addMessageListener();
+} else {
+    window.addEventListener('vuplexready', addMessageListener);
+}function addMessageListener() {
+    window.vuplex.addEventListener('message', function(event) {
+        let json = event.data;
+        // > JSON received: { "type": "greeting", "message": "Hello from C#!" }
+        console.log('JSON received: ' + json);
+    });
+}
+
+```
+
+#### 网页向Unity发消息
+
+3D WebView 有一个内置的window.vuplex.postMessage() JavaScript API，可用于将消息从 网页发送到 Unity。由于它内置在浏览器中，因此您无需在页面中包含任何第三方脚本即可使用它。以下为发消息示例脚本：
+
+```
+// The window.vuplex object gets created when the page starts loading,// so we double-check that it exists before using it here.// You can skip this step if you're sending a message after the page has loaded.
+if (window.vuplex) {
+    // The window.vuplex object already exists, so go ahead and send the message.
+    sendMessageToCSharp();
+} else {
+    // The window.vuplex object hasn't been initialized yet because the page is still
+    // loading, so add an event listener to send the message once it's initialized.
+    window.addEventListener('vuplexready', sendMessageToCSharp);
+}function sendMessageToCSharp() {
+    // This object passed to postMessage() automatically gets serialized as JSON
+    // and is emitted via the C# MessageEmitted event. This API mimics the window.postMessage API.
+    window.vuplex.postMessage({ type: 'greeting', message: 'Hello from JavaScript!' });
+}
+
+```
+
+在Unity端通过MessageEmitted 事件的监听来接收网页发送过来的消息。
+Unity 中接收该消息脚本示例：
+
+```
+async void Start() {
+    // This assumes that there's a WebViewPrefab already in the scene.
+    var webViewPrefab = GameObject.Find("WebViewPrefab").GetComponent<WebViewPrefab>();
+    // Wait for the WebViewPrefab to initialize, because the WebViewPrefab.WebView property
+    // is null until the prefab has initialized.
+    await webViewPrefab.WaitUntilInitialized();
+    webViewPrefab.WebView.MessageEmitted += (sender, eventArgs) => {
+        // > JSON received: { "type": "greeting", "message": "Hello from JavaScript!" }
+        Debug.Log("JSON received: " + eventArgs.Value);
+    };
+}
+
+```
+
+#### Unity模拟点击网页
+
+通过click函数来实现：
+
+```
+void?Click(Vector2?normalizedPoint,?bool?preventStealingFocus?= false)
+
+```
+实例：
+
+```
+// Click in the exact center of the page.
+webViewPrefab.WebView.Click(new Vector2(0.5f, 0.5f));
+// Click in the upper right quadrant of the page// and prevent stealing focus from another webview.
+webViewPrefab.WebView.Click(new Vector2(0.75f, 0.25f), true);
+
+```
+
+#### Unity操作网页文本
+
+选择所有文本，具体取决于页面的焦点元素：
+```
+webViewPrefab.WebView.SelectAll();
+
+```
+
+将选定的文本复制到剪贴板：
+
+```
+webViewPrefab.WebView.Copy();
+
+```
+将选定的文本复制到剪贴板并将其删除：
+
+```
+webViewPrefab.WebView.Cut();
+
+```
