@@ -85,4 +85,5 @@
 - **JAVA**
 
     - **Lamda**
-        - [Lamda](_18_java/_18_Lamda.md "Lamda")
+        - [内建函数式接口](_18_java/_18_Lamda.md "内建函数式接口")
+        - [数据流处理](_18_java/_18_Lamda2.md "数据流处理")
