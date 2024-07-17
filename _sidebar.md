@@ -82,6 +82,17 @@
     - **Spring OAuth**
         - [spring oauth](_12_spring/_12_1_Spring_oauth/12_1_spring_oauth.md "Spring OAuth")
 
+- **Zookeeper**
+
+    - **部署**
+        - [单机部署](_20_zookeeper/_20_基本使用.md "基本使用")
+        - [集群部署](_20_zookeeper/_21_集群部署.md "基本使用")
+
+- **SNMP**
+
+    - **基本使用**
+        - [部署和配置](_22_snmp/_22_基本使用.md "部署和配置")
+        - 
 - **JAVA**
 
     - **Lamda**
